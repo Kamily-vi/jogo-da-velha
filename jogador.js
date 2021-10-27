@@ -1,19 +1,27 @@
-const player1="X"
-const player2="O"
 
-var playTime = player1;
-var gameOver = false;
+const espacos = document.querySelectorAll(".espaco");
+let checarTurno = true;
 
-atualizarMostrador();
+const JOGADOR_X = "X";
+const JOGADOR_O = "O";
 
-function atualizarMostrador(){
+document.addEventListener("click", (event) => {
+    if(event.target.matches(".espaco")) {
+    console.log(event.target.id);
+    jogar(event.target.id);
 
-    if (gameOver) { return;}
-
-    if (playTime == player1) {
-
-        var player = document.querySelectorAll("div#mostrador img")[0];
-        player.setAttribute("src", "")
-        
     }
+} );
+
+function jogar(id) {
+
+    const espaco = document.getElementById(id);
+    turno = checarTurma ? JOGADOR_X : JOGADOR_O;
+    celula.textContent = turno;
+    checarTurma = !checarTurno;
+    checarVencedor(turno)
+}
+
+function checarVencedor(params) {
+    
 }
